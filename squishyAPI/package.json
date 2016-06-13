@@ -1,0 +1,25 @@
+{
+  "name": "squishy",
+  "version": "1.0.0",
+  "description": "squishy stuff",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Thuong",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.20"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-jslint": "^1.0.1",
+    "gulp-mocha": "^2.2.0",
+    "gulp-nodemon": "^2.1.0",
+    "jshint": "^2.9.2"
+  }
+}
