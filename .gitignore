@@ -4,3 +4,4 @@ node_modules
 notes.txt
 ./**/.env
 ./squishyAPI/.env
+squishyAPI/.env
