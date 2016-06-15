@@ -23,7 +23,7 @@ angular.module('starter', [
 .config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
@@ -95,7 +95,7 @@ angular.module('starter', [
   // $urlRouterProvider.otherwise('/app/playlists');
   $urlRouterProvider.otherwise(function($injector, $location) {
     var $state = $injector.get('$state');
-    // $state.go('login');
-    $state.go('app.dashboard');
+    $state.go('login');
+    // $state.go('app.dashboard');
   });
 });
