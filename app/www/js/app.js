@@ -1,5 +1,6 @@
 angular.module('starter', [
   'ionic',
+  'ngCordova',
   'starter.constants',
   'starter.controllers'])
 
@@ -33,6 +34,11 @@ angular.module('starter', [
     url: '/login',
     templateUrl: 'templates/login.html',
     controller: 'LoginCtrl'
+  })
+
+  .state('signin', {
+    url: '/signin',
+    templateUrl: 'templates/signin.html'
   })
 
   .state('app.search', {
