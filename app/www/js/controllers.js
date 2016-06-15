@@ -41,11 +41,11 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('LoginCtrl', ['', function(){
+.controller('LoginCtrl', [ function(){
   
 }])
 
-.controller('DashCtrl', ['', function(){
+.controller('DashCtrl', ['$scope', function($scope){
   
 }])
 

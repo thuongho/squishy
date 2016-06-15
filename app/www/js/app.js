@@ -1,6 +1,7 @@
 angular.module('starter', [
   'ionic',
   // 'ngMockE2E',
+  'starter.constants',
   'starter.controllers'])
 
 .run(function($ionicPlatform) {
@@ -19,7 +20,7 @@ angular.module('starter', [
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
   $stateProvider
 
     .state('app', {
@@ -27,6 +28,12 @@ angular.module('starter', [
     abstract: true,
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
+  })
+
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'LoginCtrl'
   })
 
   .state('app.search', {
@@ -51,7 +58,8 @@ angular.module('starter', [
     url: '/dashboard',
     views: {
       'menuContent': {
-        templateUrl: 'templates/dashboard.html'
+        templateUrl: 'templates/dashboard.html',
+        controller: 'DashCtrl'
       }
     }
   })
