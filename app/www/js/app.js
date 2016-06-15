@@ -1,6 +1,6 @@
 angular.module('starter', [
   'ionic',
-  'ngMockE2E',
+  // 'ngMockE2E',
   'starter.controllers'])
 
 .run(function($ionicPlatform) {
@@ -39,22 +39,32 @@ angular.module('starter', [
   })
 
   .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
+    url: '/browse',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/browse.html'
       }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
+    }
+  })
+
+  .state('app.dashboard', {
+    url: '/dashboard',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/dashboard.html'
       }
-    })
+    }
+  })
+
+  .state('app.playlists', {
+    url: '/playlists',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/playlists.html',
+        controller: 'PlaylistsCtrl'
+      }
+    }
+  })
 
   .state('app.single', {
     url: '/playlists/:playlistId',
