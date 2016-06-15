@@ -1,6 +1,5 @@
 angular.module('starter', [
   'ionic',
-  // 'ngMockE2E',
   'starter.constants',
   'starter.controllers'])
 
@@ -81,8 +80,16 @@ angular.module('starter', [
         templateUrl: 'templates/playlist.html',
         controller: 'PlaylistCtrl'
       }
+    },
+    data: {
+      authorizedRoles: [USER_ROLES.admin]
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  // $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise(function($injector, $location) {
+    var $state = $injector.get('$state');
+    // $state.go('login');
+    $state.go('app.dashboard');
+  });
 });
