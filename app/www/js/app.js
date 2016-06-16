@@ -96,7 +96,7 @@ angular.module('starter', [
   // $urlRouterProvider.otherwise('/app/playlists');
   $urlRouterProvider.otherwise(function($injector, $location) {
     var $state = $injector.get('$state');
-    $state.go('login');
-    // $state.go('app.dashboard');
+    // $state.go('login');
+    $state.go('app.dashboard');
   });
 });
