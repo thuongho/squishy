@@ -1,5 +1,6 @@
 angular.module('starter', [
   'ionic',
+  'ngStorage',
   'ngCordova',
   'starter.constants',
   'starter.controllers'])
