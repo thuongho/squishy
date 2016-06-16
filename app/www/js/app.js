@@ -1,5 +1,7 @@
 angular.module('starter', [
   'ionic',
+  'ngStorage',
+  'ngCordova',
   'starter.constants',
   'starter.controllers'])
 
@@ -22,7 +24,7 @@ angular.module('starter', [
 .config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
@@ -33,6 +35,11 @@ angular.module('starter', [
     url: '/login',
     templateUrl: 'templates/login.html',
     controller: 'LoginCtrl'
+  })
+
+  .state('signin', {
+    url: '/signin',
+    templateUrl: 'templates/signin.html'
   })
 
   .state('app.search', {
