@@ -3,6 +3,7 @@ angular.module('starter', [
   'ngStorage',
   'ngCordova',
   'starter.constants',
+  'starter.services',
   'starter.controllers'])
 
 .run(function($ionicPlatform) {
