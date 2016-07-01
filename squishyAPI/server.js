@@ -40,7 +40,7 @@
     app.use(bodyParser.json());
 
     var hostRouter = require('./routes/hostRoutes.js')(Host);
-    var partyNewsRouter = require('./routes/partyNewsRoutes.js')(PartyNews);
+    var partyNewsRouter = require('./routes/partyNewsRoutes.js')(PartyNews, Host);
 
     app.use('/api/hosts', hostRouter);
 
