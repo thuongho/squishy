@@ -13,6 +13,9 @@
             .post(hostsController.post)
             .get(hostsController.get);
 
+        hostRouter.route('/user/login')
+            .post(hostsController.socialLogIn);
+
         hostRouter.use('/:hostId', hostController.findHost);
 
         hostRouter.route('/:hostId')
