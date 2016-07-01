@@ -16,6 +16,7 @@
     }
 
     var Host = require('./models/hostModel');
+    var PartyNews = require('./models/partyNewsModel');
     var app = express();
 
     var port = process.env.PORT || 3000;
@@ -39,6 +40,7 @@
     app.use(bodyParser.json());
 
     var hostRouter = require('./routes/hostRoutes.js')(Host);
+    var partyNewsRouter = require('./routes/partyNewsRoutes.js')(PartyNews);
 
     app.use('/api/hosts', hostRouter);
 
