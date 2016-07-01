@@ -1,4 +1,4 @@
-angular.module('starter', [])
+angular.module('starter.services', [])
 
 .factory('StorageService', ['$localStorage', function($localStorage){
 
