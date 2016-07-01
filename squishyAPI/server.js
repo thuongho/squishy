@@ -42,6 +42,11 @@
 
     app.use('/api/hosts', hostRouter);
 
+    app.use(express.static(__dirname + '/admin'));
+    app.get('/partynews', function (req, res) {
+        res.sendFile(__dirname + '/admin/add-party-news.html');
+    });
+
     app.get('/', function (req, res) {
         res.send('Welcome to Squishy API.');
     });
