@@ -8,7 +8,7 @@
             var socialId = req.body.user_id;
             var username = req.body.screen_name;
 
-            Users.findOne({socialId: socialId}).lean().exec(function (err, user) {
+            Host.findOne({socialId: socialId}).lean().exec(function (err, user) {
                 if (err) {
                     return res.json({error: err});
                 }
@@ -31,6 +31,24 @@
                 });
             });
         };
+
+        var registerDevice = function (req, res) {
+            var user = req.body.user;
+            var token = req.body.token;
+
+            Host.findyByIdAndUpdate(user._id, {
+                $set: {
+                    deviceToken: token,
+                    deviceRegistered: true
+                }
+            }).lean().exec(function (err, user) {
+                if (err || !user) {
+                    return res.json({error: err});
+                }
+
+                res.json({error: null, user: user});
+            });
+        }
 
         var post = function (req, res) {
             var host = new Host(req.body);
@@ -56,6 +74,7 @@
 
         return {
             socialLogIn: socialLogIn,
+            registerDevice: registerDevice,
             post: post,
             get: get
         };

@@ -13,8 +13,11 @@
             .post(hostsController.post)
             .get(hostsController.get);
 
-        hostRouter.route('/user/login')
+        hostRouter.route('/user/socialLogIn')
             .post(hostsController.socialLogIn);
+
+        hostRouter.route('/user/registerDevice')
+            .put(hostsController.registerDevice)
 
         hostRouter.use('/:hostId', hostController.findHost);
 
